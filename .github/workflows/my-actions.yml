@@ -12,8 +12,8 @@ on:
       steps:
         - name: Set up Python
           uses: actions/setup-python@v5
-            with:
-              python-version: '3.12'
+          with:
+            python-version: '3.12'
         - name: Clone the project
           uses: actions/checkout@v4
         - name: Install dependencies
