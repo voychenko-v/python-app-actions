@@ -5,17 +5,17 @@ on:
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Clone the project
-        uses: actions/checkout@v4
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+        name: Set up Python
+      - uses: actions/checkout@v4
+        name: Check out code
+      - run: pip install -r requirements.txt
+        name: Install dependencies
       - name: Run tests
