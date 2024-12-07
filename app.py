@@ -15,7 +15,7 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
 
 
-# Define the resources
+# Define the resources.
 class Products(Resource):
     def get(self):
         return [product.to_dict() for product in ProductModel.select()]
